@@ -1,0 +1,48 @@
+﻿
+<h1> Complete Appointment With @Model.Name  </h1>
+
+
+<form action="/Doctor/saveNew" onsubmit="return showMessage();">
+   @*  <input type="hidden" name="DoctorName" value="@Model.Name" />
+    <input type="hidden" name="DoctorId" value="@Model.Id" /> *@
+
+    <label for="Name">Patient Name:</label>
+    <input type="text" id="Name" name="Name" style="width: 100%;" /><br /><br />
+
+    <label for="dataTime">Appointment Date:</label>
+    <input type="date" id="dataTime" name="dataTime" style="width: 100%;" /><br /><br />
+
+    <label for="timespan">Appointment Time:</label>
+    <input type="time" id="timespan" name="timespan" style="width: 100%;" /><br /><br />
+
+    <label type="hidden" for="DoctorName" class="form-label"></label>
+    <input type="hidden" class="form-control" id="DoctorName" name="DoctorName" value="@Model.Name">
+
+    <button type="submit" class="btn btn-primary">Complete Appointment</button>
+</form>
+
+    <script>
+    function showMessage() {
+        const Name = document.getElementById('Name').value;
+        if (!Name ) {
+            alert("Please enter data");
+            return false;
+        }
+        alert("Your Appointment has been successfully completed , thank you!");
+        return true;
+    }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

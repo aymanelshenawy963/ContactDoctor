@@ -1,0 +1,30 @@
+﻿
+<h1> Book Appointment </h1>
+
+<div class="row">
+    @{
+        foreach (var items in Model)
+        {
+            <div class="col-4 mb-3 d-flex">
+                <div class="card" style="width: 18rem;">
+                    <a href="/Doctors/CompleteAppointment?CompleteId=@items.Id"> <img src="~/images/@items.Img" class="card-img-top" alt="..."> </a>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-9">
+                                <h5>@items.Name</h5>
+                            </div>
+                            <div class="col-9">
+                                Specialization: @items.Specialization
+                            </div><br /><br />
+                            <div class="col-3">
+                                <span class="badge text-bg-success">Rate / 5</span>
+                            </div>
+                        </div>
+                        <a href="/Doctor/CopmleteAppointment?Id=@items.Id&DoctorName=@items.Name" class="btn btn-primary">Book Appointment</a>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+
+</div>
