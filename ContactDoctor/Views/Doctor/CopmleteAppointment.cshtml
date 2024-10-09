@@ -24,7 +24,7 @@
     <script>
     function showMessage() {
         const Name = document.getElementById('Name').value;
-        if (!Name ) {
+        if (!Name || !dataTime || !timespan ) {
             alert("Please enter data");
             return false;
         }
